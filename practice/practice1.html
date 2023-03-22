@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Thực hành Form</title>
+  </head>
+  <body>
+    <header><h1>Create Account</h1></header>
+    <main>
+      <fieldset>
+        <legend>Registration Information</legend>
+        <form action="" id="thong-tin-dang-ky">
+          <label for="firstname"><b>First Name*:</b> </label>
+          <input type="text" id="firstname" name="firstname" placeholder="Enter your first name" maxlength="10" />
+          <label for="lastname"><b>Last Name*:</b></label>
+          <input type="text" id="lastname" name="lastname" placeholder="Enter your last name"/>
+          <br />
+          <label for="Email"><b>Email*:</b></label>
+          <input type="email" id="email" name="email" placeholder="Enter your email"/>
+          <label for="phone"><b>Phone*:</b></label>
+          <input type="number" id="phone" name="phone" placeholder="Enter your phone number" maxlength="11">
+          <br>
+          <label for="Password"><b>Password*:</b></label>
+          <input type="password" placeholder="Enter your password">
+          <label for="ConfirmPass"><b>Confirm Password*:</b></label>
+          <input type="password" placeholder="Enter your password again">
+        </form>
+      </fieldset>
+      <br />
+      <fieldset>
+        <legend>Personal Information</legend>
+        <form action="" id="thong-tin-ca-nhan"></form>
+        <label for="gender"><b>Gender: </b></label>
+        <label for="male">Male</label>
+        <input type="radio" id="male" name="gender" value="true">
+        <label for="female">Female</label>
+        <input type="radio" name="gender" id="female" value="false">
+        <label for="hobby"><b>Hobbies</b></label>
+        <input type="checkbox" value="music" id="music">
+        <label for="music">Music</label>
+        <input type="checkbox" value="sports" id="sports">
+        <label for="sports">Sports</label>
+        <input type="checkbox" value="travel" id="travel">
+        <label for="travel">Travel</label>
+        <input type="checkbox" value="movie" id="movie">
+        <label for="movie">Movies</label>
+        <br>
+        <label for="soI"><b>Source of Income:</b></label>
+        <select name="soI" id="soI">
+            <option value="employed">Employed</option>
+            <option value="unemployed">Unemployed</option>
+            <option value="nothing">Nothing</option>
+        </select>
+        <label for="income"><b>Income:</b></label>
+        <input type="range" name="income" id="income">
+        <br>
+        <label for="age"><b>Age:</b></label>
+        <input type="number" name="age" id="age" max="100" min="0">
+        <label for="pPicture"><b>Profile Picture:</b></label>
+        <input type="file" value="Choose File">
+        <br>
+        <label for="birthday"><b>Birthday:</b></label>
+        <input type="date" id="date" name="date">
+        <label for="address"><b>Address:</b></label>
+        <input type="text" id="address" name="address">
+        <br>
+        <label for="biography"><b>Bio:</b></label>
+        <textarea name="biography" id="biography" cols="30" rows="10"></textarea>
+      </fieldset> 
+      <form action="" id="submit-reset">
+        <input type="submit" value="Create">  
+        <input type="reset" value="Reset">
+      </form>
+    </main>
+  </body>
+</html>

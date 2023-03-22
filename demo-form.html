@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <header><h1>Demo HTML Form - 20/03/2023</h1></header>
+    <main>
+        <form action="" id="form-dang-ky">
+            <label for="Email">Email đăng ký</label>
+            <input type="email" id="email" name="email">
+            <br>
+            <label for="name">Họ và tên</label>
+            <input type="text" id="name" name="name" maxlength="30">
+            <br />
+            <label for="age">Tuổi</label>
+            <input type="number" id="age" name="age" min="0" max="100">
+            <br />
+            <label for="doB">Ngày sinh</label>
+            <input type="date" id="date" name="date">
+            <label for="">Đã tốt nghiệp</label>
+            <input type="checkbox" id="question-1" name="question-01">
+            <br><br>
+            <label for="">Nơi sinh</label>
+            <select name="poB" id="poB">
+                <option value="43">Đà Nẵng</option>
+                <option value="92">Quảng Nam</option>
+                <option value="76">Quảng Ngãi</option>
+            </select>
+            <br><br>
+            <label for="hobbit">Sở thích</label>
+            <br>
+            <label for="chess">Chơi cờ</label>
+            <input type="checkbox" value="chess" id="chess">
+            <br>
+            <label for="guitar">Ghi ta</label>
+            <input type="checkbox" value="guitar" id="guitar">
+            <br>
+            <label for="movie">Xem phim</label>
+            <input type="checkbox" value="movie" id="movie">
+            <br>
+            <label for="game">Chơi game</label>
+            <input type="checkbox" value="game" id="game">
+            <br><br>
+            <label for="gender">Giới tính</label>
+            <label for="male">Nam</label>
+            <input type="radio" id="male" name="gender" value="true">
+            <label for="female">Nữ</label>
+            <input type="radio" id="female" name="gender" value="false">
+            <br>
+            <br>
+            <label for="msg">Message</label>
+            <textarea name="msg" id="msg" cols="30" rows="10"></textarea>
+            <input type="submit" value="Đăng ký">
+        </form>     
+        <br><br>
+        <form action="" id="form-dang-nhap">
+            <input type="email" placeholder="Điền email">
+            <input type="password" placeholder="Vui lòng đăng nhâp">
+            <input type="submit" value="Đăng nhập">
+            <input type="reset" value="Reset form">
+        </form>   
+    </main>
+</body>
+</html>

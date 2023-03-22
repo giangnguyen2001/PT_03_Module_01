@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise - Form</title>
+  </head>
+  <body>
+    <header><h1>Tạo form đơn giản</h1></header>
+    <form
+      action=""
+      id="thong-tin"
+      style="
+        background-color: #d5feff;
+        width: 500px;
+        margin: 0 auto;
+        padding: 20px;
+      "
+    >
+      <table bgcolor="white" width="100%">
+        <tr>
+          <th colspan="4" bgcolor="#FF4C00">SỞ THÍCH CỦA BẠN</th>
+        </tr>
+        <tr>
+          <td><label for="yourname">Họ và tên</label></td>
+          <td colspan="3">
+            <input type="text" name="yourname" id="yourname" maxlength="20" />
+          </td>
+        </tr>
+        <tr>
+          <td align="right"><label for="email">Email</label></td>
+          <td colspan="3">
+            <input type="email" name="email" id="email" size="15" />
+          </td>
+        </tr>
+
+        <tr>
+          <td align="right"><label for="hobby"> Sở thích</label></td>
+          <td>
+            <input type="checkbox" value="sport" id="sport" />
+            <label for="sport">Thể thao</label>
+          </td>
+          <td>
+            <input type="checkbox" value="musical" id="musical" />
+            <label for="musical">Âm nhạc</label>
+          </td>
+          <td>
+            <input type="checkbox" value="reading" id="reading" />
+            <label for="reading">Đọc sách</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox" value="surfer" id="surfer" />
+            <label for="surfer">Lướt web</label>
+          </td>
+          <td>
+            <input type="checkbox" value="game" id="game" />
+            <label for="game">Chơi game</label>
+          </td>
+          <td>
+            <input type="checkbox" value="cinema" id="cinema" />
+            <label for="cinema">Điện ảnh</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>
+            <input type="checkbox" value="travelling" id="travelling" />
+            <label for="travelling">Du lịch</label>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td colspan="3">
+            <input type="submit" value="Gửi thông tin" />
+            <input type="reset" value="Nhập lại" />
+          </td>
+        </tr>
+      </table>
+    </form>
+  </body>
+</html>

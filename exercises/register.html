@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise - Form 2</title>
+  </head>
+  <body>
+    <header><h1>Form đăng ký</h1></header>
+    <form
+      action=""
+      id="registration"
+      style="background-color: #fffda9; width: 500px"
+    >
+      <table width="100%">
+        <main>
+          <tr>
+            <td bgcolor="#D4FDD6" colspan="2" width="500px">ĐĂNG KÝ HỌC VIÊN</td>
+          </tr>
+          <tbody>
+            <tr>
+              <td>Họ và tên</td>
+              <td><input type="text" name="name" id="name" /></td>
+            </tr>
+            <tr>
+              <td>Ngày sinh</td>
+              <td><input type="date" name="date" id="date" /></td>
+            </tr>
+            <tr>
+              <td><label for="gd">Giới tính</label></td>
+              <td>
+                <input type="radio" id="male" name="gd" value="true" />Nam
+                <input type="radio" id="female" name="gd" />Nữ
+              </td>
+              <td></td>
+            </tr>
+            <tr>
+              <td valign="top">Địa chỉ</td>
+              <td>
+                <textarea
+                  name="diachi"
+                  id="diachi"
+                  cols="20"
+                  rows="3"
+                ></textarea>
+              </td>
+            </tr>
+            <tr>
+              <td>Lớp</td>
+              <td>
+                <select name="classes" id="classes">
+                  <option value="choose">-Chọn lớp-</option>
+                  <option value="1">Lớp A</option>
+                  <option value="2">Lớp B</option>
+                  <option value="3">Lớp C</option>
+                  <option value="4">Lớp D</option>
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td>Email</td>
+              <td><input type="email" name="email" id="email" /></td>
+            </tr>
+            <tr>
+              <td><label for="đt">Điện thoại</label></td>
+              <td><input type="tel" name="đt" id="đt" maxlength="11" /></td>
+            </tr>
+          </tbody>
+          <tfoot>
+            <tr>
+              <td></td>
+              <td>
+                <input type="submit" value="Đăng ký" />
+                <input type="reset" value="Nhập lại" />
+              </td>
+            </tr>
+          </tfoot>
+        </main>
+      </table>
+    </form>
+  </body>
+</html>
