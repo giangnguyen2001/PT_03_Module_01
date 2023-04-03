@@ -1,0 +1,133 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-image: url(../imgs/Decore.png);
+  background-size: contain;
+  background-position: top right;
+  background-repeat: no-repeat;
+
+  padding: 10px 50px;
+}
+nav {
+  display: flex;
+  justify-content: space-between;
+}
+nav .jaho {
+  width: 10%;
+}
+nav .navigate {
+  display: flex;
+  gap: 20px;
+  justify-content: flex-end;
+  align-items: center;
+}
+nav #signup {
+  font-weight: 600;
+  border-radius: 8px;
+  background-color: #fff1da;
+}
+nav #login {
+  border: none;
+  background-color: #fff1da;
+}
+nav #country {
+  border: none;
+  background-color: #fff1da;
+}
+
+img {
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero {
+  position: relative;
+  height: 600px;
+}
+.hero-content {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+.hero-img {
+  position: absolute;
+  width: 50%;
+  top: 50px;
+  right: 0;
+}
+.hero-sub-title {
+  text-transform: uppercase;
+  color: #df6951;
+  font-weight: 700;
+}
+.hero-title {
+  font-size: 84px;
+  font-family: "Volkhov", serif;
+  width: 600px;
+}
+
+.hero-btn > button:first-child {
+  background-color: orange;
+  padding: 15px;
+  color: white;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+}
+.hero-btn > button:last-child {
+  background-color: white;
+  padding: 15px;
+  font-weight: 600;
+  border: none;
+  border-radius: 8px;
+}
+.catergory {
+  text-align: center;
+}
+.service {
+  text-align: center;
+  display: grid;
+  gap: 20px;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 20px 20px;
+  align-items: center;
+}
+.service img {
+  width: 50%;
+}
+.place {
+  text-align: center;
+}
+.all {
+  display: grid;
+  gap: 5px;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 20px 20px;
+}
+img {
+  width: 100%;
+}
+.iem {
+  width: 20%;
+  display: flex;
+  gap: 30px;
+  border: none;
+  padding-right: 1%;
+  vertical-align: top;
+  list-style-type: none;
+}
+#tnof {
+  font-family: "Delicious Handrawn", cursive;
+  font-family: "Noto Sans Avestan", sans-serif;
+  font-family: "Poppins", sans-serif;
+}
+.iem .iconic {
+  display: flex;
+  gap: 5px;
+}
