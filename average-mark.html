@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài 1 - tính điểm trung bình</title>
+    <style>
+      .card {
+        width: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <section>
+      <h1>Bài tập 1</h1>
+      <button onclick="calculateArea()">
+        Tính diện tích hình tam giác vuông
+      </button>
+      <button onclick="calculateMark()">Nhập điểm thi</button>
+      <button onclick="calculateCircleArea()">Tính diện tích hình tròn</button>
+      <button onclick="calculateCirclePerimeter()">Chu vi hình tròn</button>
+      <button onclick="degreeChange()">Chuyển đổi nhiệt độ</button>
+    </section>
+    <script>
+      function calculateArea() {
+        const a = Number(prompt("Nhập vào cạnh a:"));
+        const b = Number(prompt("Nhập vào cạnh b:"));
+        const s = (a * b) / 2;
+        // document.write(s);
+        alert("Diện tích tg vuông là:" + s);
+      }
+      // Number(x)
+      // parseFloat()
+      // +
+      // parseInt()-Lấy phần nguyên
+      // Chuyển string thành number
+
+      //   Bài 1
+      function calculateMark() {
+        const math = Number(prompt("Nhập điểm Toán"));
+        const phys = Number(prompt("Nhập điểm Lý"));
+        const bio = Number(prompt("Nhập điểm Sinh"));
+        const sum = math + phys + bio;
+        const average = sum / 3;
+        console.log("Kiểm tra tổng", sum, "Trung bình 3 môn là: ", average);
+        // toFixed(x) - x là số làm tròn sau dấy ","
+      }
+      // Bài 2
+      function degreeChange() {
+        const C = Number(prompt("Chuyển đổi nhiệt độ"));
+        const F = (C * 9) / 5 + 32;
+        console.log(C, " = ", F);
+      }
+      //   Bài 3
+      function calculateCircleArea() {
+        const pi = 3.14;
+        const r = Number(prompt("Nhập bán kính r = "));
+        const s = pi * r * r;
+        console.log("Diện tích hình tròn = ", s);
+      }
+
+      //   Bài 4
+      function calculateCirclePerimeter() {
+        const pi = 3.14;
+        const d = Number(prompt("Nhập đường kính: "));
+        const c = d * pi;
+        console.log("Chu vi hình tròn", c);
+      }
+
+    </script>
+  </body>
+</html>
