@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Session 6 - Decision making and loops</title>
+    <style>
+      .card {
+        padding: 20px;
+        margin-bottom: 20px;
+        border: 2px solid blue;
+      }
+    </style>
+  </head>
+  <body>
+    <section class="card">
+      <h2>Ví dụ</h2>
+      <button onclick="rankStudent()">Xếp hạng</button>
+      <button onclick="findDay()">Tìm số ngày của tháng</button>
+    </section>
+
+    <section class="card">
+      <h2>Bài tập 1</h2>
+      <button onclick=""></button>
+    </section>
+
+    <section class="card">
+      <h2>Bài tập 2</h2>
+      <input
+        type="text"
+        id="month"
+        placeholder="Nhập vào tháng để kiểm tra"
+      />
+      <button onclick="handleFindDayOfMonth()">Check</button>
+      <p id="result"></p>
+    </section>
+    <script>
+      // Ví dụ về câu điều kiện
+      console.log("Hello js");
+      if (7 > 10) {
+        console.log("7 lón hơn 10");
+      }
+      if (7 < 20) {
+        console.log("7 bé hơn 20", 7 < 20);
+      }
+      let isCheck = false;
+      if (isCheck) {
+        console.log("Đã đc kiểm tra");
+      } else {
+        console.log("Chưa đc kiểm tra");
+      }
+      // Gán isCheck = nghịch đảo của isCheck
+      isCheck = !isCheck;
+      isCheck
+        ? console.log("Đã kiểm tra lần 2")
+        : console.log("Ko kiểm tra nữa");
+
+      function rankStudent() {
+        const mark = prompt("Nhập điểm của học sinh: ");
+        if (mark >= 8) {
+          console.log("Học sinh giỏi");
+        } else if (mark >= 7) {
+          console.log("Học sinh khá");
+        } else if (mark >= 5) {
+          console.log("Học sinh trung bình");
+        } else {
+          console.log("Học sinh yếu");
+        }
+      }
+      function findDay() {
+        const month = parseFloat(prompt("Nhập vào tháng: "));
+        switch (month) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            console.log("Tháng có 31 ngày");
+            break;
+          case 2:
+            console.log("Tháng có 28 hoặc 29 ngày");
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            console.log("Tháng có 30 ngày");
+            break;
+          default:
+            alert("Vui lòng nhập lại!");
+        }
+      }
+
+      //   Demo vòng lặp for
+      for (let i = 0; i < 10; i++) {
+        console.log("Lần lặp thứ ", i);
+      }
+      //   Xây dựng BCC 2
+      for (let k = 0; k <= 10; k++) {
+        console.log(`Kết quả 2 X ${k}=${2 * k}`);
+      }
+
+      //   Demo while
+      let sum = 0;
+      let i = 0;
+      while (sum < 100) {
+        sum += i;
+        i++;
+      }
+      console.log("Số lần lặp là: ", i, "và tổng = ", sum);
+
+      let number;
+      do {
+        number = +prompt("Nhập vào 1 số bé hơn 10:");
+      } while (number > 10);
+
+      //   Demo break và continue
+      for (let i = 0; i < 10000; i++) {
+        if (i > 5) {
+          break;
+        }
+        console.log("Số lần chạy thứ 1: ", i);
+      }
+      for (let i = 10; i > 0; i -= 2) {
+        if (i === 6) {
+          continue;
+        }
+        console.log("Các số dùng continue: ", i);
+      }
+
+      // Bài tập 2
+      // Lấy đc element
+
+      function handleFindDayOfMonth() {
+        const monthElement = Number(document.getElementById("month"));
+        const month = monthElement.value;
+        const result = document.querySelector("#result");
+        console.log("Kiểm tra tháng ", month);
+        let resultContent = "";
+        switch (month) {
+          case 1:
+          case 3:
+          case 5:
+          case 7:
+          case 8:
+          case 10:
+          case 12:
+            resultContent = "31";
+            break;
+          case 2:
+            resultContent = "28 or 29";
+            break;
+          case 4:
+          case 6:
+          case 9:
+          case 11:
+            resultContent = "30";
+            break;
+          default:
+            resultContent = "Vui lòng nhập lại đúng tháng";
+        }
+        result.innerHTML = " tháng " + month + " có " + resultContent + " ngày";
+      }
+    </script>
+  </body>
+</html>

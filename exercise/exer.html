@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập</title>
+  </head>
+  <body>
+    <section>
+      <h3>Exercises</h3>
+      <button onclick="chiaHet()">Kiểm tra</button>
+      <br /><br />
+      <button onclick="AgeCheck()">Kiểm tra độ tuổi</button>
+      <br /><br />
+      <button onclick="checkSoNguyen()">Press here</button>
+      <br /><br />
+      <button onclick="biggestNumber()">Kiểm tra số lớn nhất</button>
+      <br /><br />
+      <button onclick="biggerNumber()">Hãy nhập chuỗi số</button>
+      <br /><br />
+      <button onclick="RankStatus()">Nhập điểm</button>
+    </section>
+    <script>
+      // Bài 1
+      function chiaHet() {
+        let a = Number(prompt("Nhập a: "));
+        let b = Number(prompt("Nhập b: "));
+        if (a % b == 0) {
+          document.write(a + " chia hết cho " + b);
+        } else document.write(a + " ko chia hết cho " + b);
+      }
+
+      // Bài 2
+      function AgeCheck() {
+        let age = Number(prompt("Nhập tuổi học sinh: "));
+        if (age < 15) {
+          document.write("Học sinh ko đủ tuổi");
+        } else document.write("Chấp thuận");
+      }
+
+      // Bài 3
+      function checkSoNguyen() {
+        let a = Number(prompt("Nhập số nguyên bất kỳ: "));
+        if (a > 0) {
+          document.write(a + " lớn hơn 0");
+        } else document.write(a + " nhỏ hơn 0");
+      }
+
+      //  Bài 4
+      function biggestNumber() {
+        let a = Number(prompt("Nhập số a: "));
+        let b = Number(prompt("Nhập số a: "));
+        let c = Number(prompt("Nhập số a: "));
+        if (a > b && a > c) {
+          document.write(a + " là số lớn nhất");
+        } else if (b > c && b > a) {
+          document.write(b + " lớn nhất");
+        } else document.write(c + " lớn nhất");
+      }
+
+      //   Bài 4.1
+      function biggerNumber() {
+        let max = 0;
+        let n = prompt("Nhập vào số n: ");
+        for (let i = 0; i < n; i++) {
+          let a = Number(prompt("Nhập a"));
+          if (a > max) {
+            a = max;
+          }
+        }
+        document.write(" Số lớn nhất là: ", max);
+      }
+
+      //   Bài 5
+      function RankStatus() {
+        let t1 = Number(prompt("Nhập điểm kiểm tra: "));
+        let t2 = Number(prompt("Nhập điểm giữa kỳ: "));
+        let t3 = Number(prompt("Nhập điểm cuối kỳ: "));
+        let hk = ((t1 + 2 * t2 + 3 * t3) / 6).toFixed(1);
+        if (hk > 8.0) {
+          document.write(hk + ": Học lực giỏi");
+        } else if (hk > 6.5) {
+          document.write(hk + ": Học lực khá");
+        } else if (hk > 5.0) {
+          document.write(hk + ": Học lực TB");
+        } else document.write(hk + ": Học lực yếu");
+      }
+    </script>
+  </body>
+</html>
