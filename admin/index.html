@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Orders Management</title>
+    <link rel="stylesheet" href="/css/style.css" />
+    <link rel="stylesheet" href="/css/modal.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigator">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="fa-brands fa-jedi-order"></i></span>
+              <span class="title">Adminstrator</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/user.html">
+              <span class="icon"><i class="fa-solid fa-people-roof"></i></span>
+              <span class="title">Users Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/product.html">
+              <span class="icon"
+                ><i class="fa-solid fa-boxes-stacked"></i
+              ></span>
+              <span class="title">Products Management</span>
+            </a>
+          </li>
+          <li class="active">
+            <a href="/admin/index.html">
+              <span class="icon"><i class="fa-solid fa-truck-fast"></i></span>
+              <span class="title">Orders Management</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="fa-solid fa-gear"></i></span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></span>
+              <span class="title" onclick="handleLogout()">Sign out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- main -->
+      <div class="main">
+        <!-- bar -->
+        <div class="topbar">
+          <div class="toggle">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="search">
+            <label for="">
+              <input
+                type="text"
+                id="search"
+                placeholder="Search here..."
+                onkeyup="btnSearch()"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+          </div>
+          <div class="avatar">
+            <img src="/imgs/operator_m.png" alt="" />
+          </div>
+        </div>
+
+        <!-- list -->
+        <div class="detail">
+          <div class="recent-order">
+            <div class="card-header">
+              <h3>Recent Orders</h3>
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <td>Image</td>
+                  <td>Id</td>
+                  <td>Name</td>
+                  <td>Customer</td>
+                  <td>Quantity</td>
+                  <td>Price</td>
+                  <td>Description</td>
+                  <td>Action</td>
+                </tr>
+              </thead>
+              <tbody></tbody>
+            </table>
+          </div>
+        </div>
+        <!-- Modal -->
+        <div id="modal1">
+          <div class="modal-view">
+            <span class="close1">X</span>
+            <div class="img-fix">
+              <input type="image" id="image-view" disabled />
+            </div>
+            <div class="info-view">
+              <input type="text" id="product-view" disabled />
+              <p>Product Name:</p>
+              <input type="text" id="name-view" disabled />
+              <p>Customer Name:</p>
+              <input type="text" id="customer-view" disabled />
+              <p>Quantity:</p>
+              <input type="text" id="quantity-view" disabled />
+              <p>Total Price:</p>
+              <input type="text" id="price-view" disabled />
+              <p>Description:</p>
+              <input type="text" id="description-view" disabled />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/js/order.js"></script>
+  </body>
+</html>
