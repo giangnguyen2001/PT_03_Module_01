@@ -1,0 +1,106 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  background: #000000;
+  position: relative;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  color: #ffffff;
+  margin: 50px 0;
+}
+.navigate #learn,
+#build,
+#product,
+#community {
+  color: #ffffff;
+}
+.s1 {
+  position: relative;
+}
+
+.harness {
+  width: 1, 238px;
+  height: 270px;
+  gap: 31px;
+}
+
+.title {
+  position: relative;
+  display: flex;
+  color: #ffffff;
+}
+.title h1 {
+  width: 840px;
+  height: 270px;
+  font-size: 82px;
+}
+.s1 .title p {
+  display: flex;
+  width: 367px;
+  height: 135px;
+}
+
+.img-ex {
+  position: absolute;
+}
+.powering {
+  width: 1443px;
+  height: 105px;
+  text-align: center;
+  margin-top: 360px;
+  color: #6843ec;
+  text-transform: uppercase;
+}
+.powering img {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 0px 50px;
+  gap: 40px;
+  background: #000000;
+
+  position: absolute;
+  width: 1166.36px;
+  height: 38px;
+  left: calc(50% - 1166.36px / 2 - 0.32px);
+  top: 58.59px;
+}
+
+.s2 .join p {
+  width: 410px;
+  height: 47px;
+  font-size: 60px;
+}
+.s2 .join {
+  position: absolute;
+  color: #ffffff;
+  display: flex;
+}
+
+.s3 {
+  position: absolute;
+  margin: 600px 0;
+}
+.final {
+  display: flex;
+  gap: 20px;
+  justify-content: space-around;
+  border: 1px solid #141414;
+  color: white;
+  margin-top: 1200px;
+}
+.final ul {
+  list-style-type: none;
+}
+
+.final .ether {
+  display: flex;
+}
+
+.ether .f1 {
+  margin: 0 50px;
+}
