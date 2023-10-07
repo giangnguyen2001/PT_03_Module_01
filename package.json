@@ -1,0 +1,17 @@
+{
+  "dependencies": {
+    "firebase": "^10.4.0",
+    "firebaseui": "^6.1.0",
+    "react": "^18.2.0"
+  },
+  "name": "project1---example",
+  "version": "1.0.0",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}
