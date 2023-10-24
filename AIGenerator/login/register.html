@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Register</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe"
+      crossorigin="anonymous"
+    ></script>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        font-family: "Ubuntu", sans-serif;
+        color: rgb(32, 212, 59);
+      }
+      body {
+        background: url("/AIGenerator/images/wallpaper.png") no-repeat;
+        background-position: fill;
+        background-size: cover;
+      }
+      form {
+        width: 500px;
+        margin: 0 auto;
+        padding: 100px 0 0 0;
+      }
+      button {
+        width: 100%;
+        height: 40px;
+        border-radius: 40px;
+        background: #fff;
+        border: none;
+        outline: none;
+        cursor: pointer;
+        font-size: 1em;
+        font-weight: 600;
+      }
+      .login-link {
+        font-size: 1em;
+        text-align: center;
+        padding: 10px;
+      }
+      .login-link a {
+        color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <h3>Register</h3>
+      <div class="mb-3">
+        <label for="email" class="form-label">Email address</label>
+        <input
+          type="email"
+          class="form-control"
+          id="email"
+          aria-describedby="emailHelp"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input type="password" class="form-control" id="password" />
+      </div>
+      <div class="mb-3">
+        <label for="confirm-password" class="form-label"
+          >Confirm password</label
+        >
+        <input type="password" class="form-control" id="confirm-password" />
+      </div>
+
+      <button type="submit" class="btn btn-primary">Submit</button>
+      <div class="login-link">
+        <a href="/AIGenerator/login/login.html">Login</a>
+      </div>
+    </form>
+
+    <script>
+      // B1. Bắt sự kiện khi submit
+
+      const form = document.querySelector("form");
+      form.addEventListener("submit", (event) => {
+        // chăn action
+        event.preventDefault();
+
+        // B2: Lấy thông tin từ form
+        const admin = getDataForm();
+
+        // B3: validate
+        const error = validate(admin);
+        if (error.status) {
+          // render lỗi và kết thúc
+          renderError(error);
+          return;
+        } else {
+          // render không lỗi
+        }
+
+        // B4: Lấy data từ localStorage để kiểm tra trùng lặp
+
+        const adminsDB = JSON.parse(localStorage.getItem("admins")) ?? [];
+
+        //  B5: Kiểm tra email đã đăng ký chưa
+        let isDulicate = false;
+        adminsDB.forEach((item) => {
+          if (item.email === admin.email) {
+            isDulicate = true;
+          }
+        });
+
+        if (!isDulicate) {
+          //isDulicate === false
+          delete admin.confirmPassword;
+          adminsDB.push(admin);
+
+          //   B6: Đẩy dữ liệu lên localStorage
+          localStorage.setItem("admins", JSON.stringify(adminsDB));
+          //   Chuyển sang login
+
+          window.location = "login.html";
+        } else {
+          error.status = true;
+          error.emailMsg =
+            "Email đã tồn tại, vui lòng đăng nhập hoặc đăng ký email mới";
+          renderError(error);
+        }
+      });
+
+      //   get data form
+      function getDataForm() {
+        const emailValue = document.querySelector("#email").value;
+        const passwordValue = document.querySelector("#password").value;
+        const confirmPasswordValue =
+          document.querySelector("#confirm-password").value;
+        return {
+          email: emailValue,
+          password: passwordValue,
+          confirmPassword: confirmPasswordValue,
+        };
+      }
+
+      //   validate info
+      function validate(data) {
+        const error = {
+          status: false,
+          emailMsg: "",
+          passwordMsg: "",
+          confirmPasswordMsg: "",
+        };
+        const re =
+          /^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+
+        if (!data.email.match(re)) {
+          error.status = true;
+          error.emailMsg = "Không đúng định dạng email. Vui lòng nhập lại";
+        }
+
+        if (data.password.length < 8) {
+          error.status = true;
+          error.passwordMsg =
+            "Password không được dưới 8 ký tự. Vui lòng nhập lại";
+        }
+        return error;
+      }
+
+      function renderError() {}
+    </script>
+  </body>
+</html>

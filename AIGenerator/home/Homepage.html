@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Homepage</title>
+    <link rel="stylesheet" href="/AIGenerator/css/style.css" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+  </head>
+  <body>
+    <div class="container">
+      <div class="navigator">
+        <ul>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="fa-brands fa-jedi-order"></i></span>
+              <span class="title">Chain</span>
+            </a>
+          </li>
+          <li>
+            <a href="/AIGenerator/home/CreateImg.html">
+              <button class="title1" style="background-color: yellow">
+                <span class="icon"
+                  ><i class="fa-regular fa-star"></i>Create</span
+                >
+              </button>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/user.html">
+              <span class="icon"><i class="fa-solid fa-house"></i></span>
+              <span class="title">Home</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/product.html">
+              <span class="icon"><i class="fa-regular fa-file"></i></span>
+              <span class="title">Collection</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/index.html">
+              <span class="icon"
+                ><i class="fa-solid fa-file-arrow-down"></i
+              ></span>
+              <span class="title">Downloads</span>
+            </a>
+          </li>
+          <li>
+            <a href="/admin/index.html">
+              <span class="icon"><i class="fa-brands fa-rocketchat"></i></span>
+              <span class="title">Chat</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="fa-regular fa-clock"></i></span>
+              <span class="title">History</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"><i class="fa-solid fa-gear"></i></span>
+              <span class="title">Settings</span>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <span class="icon"
+                ><i class="fa-solid fa-right-from-bracket"></i
+              ></span>
+              <span class="title" onclick="handleLogout()">Sign out</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <!-- main -->
+      <div class="main">
+        <!-- bar -->
+        <div class="topbar">
+          <div class="search">
+            <label for="">
+              <input
+                type="text"
+                id="search"
+                placeholder="Search here..."
+                onkeyup="btnSearch()"
+              />
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </label>
+          </div>
+          <div class="avatar">
+            <img src="/imgs/operator_m.png" alt="" />
+          </div>
+        </div>
+
+        <!-- Modal
+        <div id="modal1">
+          <div class="modal-view">
+            <span class="close1">X</span>
+            <div class="img-fix">
+              <input type="image" id="image-view" disabled />
+            </div>
+            <div class="info-view">
+              <input type="text" id="product-view" disabled />
+              <p>Product Name:</p>
+              <input type="text" id="name-view" disabled />
+              <p>Customer Name:</p>
+              <input type="text" id="customer-view" disabled />
+              <p>Quantity:</p>
+              <input type="text" id="quantity-view" disabled />
+              <p>Total Price:</p>
+              <input type="text" id="price-view" disabled />
+              <p>Description:</p>
+              <input type="text" id="description-view" disabled />
+            </div>
+          </div>
+        </div> -->
+        <div class="detail">
+          <button>Tag</button>
+          <button>Tag</button>
+          <button>Tag</button>
+          <button>Tag</button>
+          <button>Tag</button>
+          <button>+</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      function handleLogout() {
+        localStorage.removeItem("adminLogin");
+        window.location = "/AIGenerator/login/login.html";
+      }
+    </script>
+  </body>
+</html>
