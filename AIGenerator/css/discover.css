@@ -41,6 +41,24 @@ body {
   left: 0;
   width: 100%;
 }
+
+.navigator ul .list {
+  position: relative;
+  top: 23px;
+}
+.navigator ul .list #n1 {
+  top: 40px;
+}
+
+.navigator ul .list #n1 a {
+  position: relative;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: var(--white);
+  cursor: pointer;
+}
+
 .navigator ul li {
   position: relative;
   width: 100%;
@@ -50,7 +68,11 @@ body {
 }
 .navigator ul li:nth-child(1) {
   margin-bottom: 40px;
-  pointer-events: none;
+  /* pointer-events: none; */
+}
+
+.navigator ul .list #n1 a:hover {
+  color: #2563eb;
 }
 
 .navigator ul li button {
@@ -100,16 +122,6 @@ body {
 .navigator ul li a .title {
   position: relative;
   display: block;
-  padding: 0 10px;
-  height: 60px;
-  line-height: 60px;
-  text-align: start;
-  white-space: nowrap;
-}
-
-.navigator ul li div .title {
-  position: relative;
-  display: inline-flex;
   padding: 0 10px;
   height: 60px;
   line-height: 60px;
