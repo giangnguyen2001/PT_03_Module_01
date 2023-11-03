@@ -16,7 +16,7 @@
   </head>
   <body>
     <section>
-      <!-- <div class="form-register">
+      <div class="form-register">
         <div class="form-value">
           <form id="MainForm">
             <h2>Register</h2>
@@ -38,7 +38,7 @@
             <div class="input-box">
               <i class="fa-solid fa-lock"></i>
               <input
-                type="confirm-password"
+                type="password"
                 class="form-control"
                 id="confirm-password"
               />
@@ -46,13 +46,13 @@
             </div>
             <button>Sign Up</button>
             <div class="move-to-login">
-              <a href="/AIGenerator/login/login.html">Login</a>
+              <a href="./login.html">Login</a>
             </div>
           </form>
         </div>
-      </div> -->
+      </div>
 
-      <form id="MainForm">
+      <!-- <form id="MainForm">
         <h3>Register</h3>
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
@@ -78,7 +78,7 @@
         <div class="login-link">
           <a href="/AIGenerator/login/login.html">Login</a>
         </div>
-      </form>
+      </form> -->
     </section>
 
     <script>
@@ -216,6 +216,7 @@
         createUserWithEmailAndPassword(auth, Email.value, Password.value)
           .then((Credentials) => {
             console.log(Credentials);
+            window.location = "./login.html";
           })
           .catch((error) => {
             alert(error.message);
