@@ -40,7 +40,7 @@
             <a href="/AIGenerator/home/CreateImg.html">
               <button class="title1">
                 <span class="icon"
-                  ><i class="fa-regular fa-star"></i>Create</span
+                  ><i class="fa-regular fa-star"></i>Generate</span
                 >
               </button>
             </a>
@@ -94,8 +94,12 @@
             </li>
             <li>
               <span class="color-mode">
-                <button><i class="fa-regular fa-moon"></i>Dark</button>
-                <button><i class="fa-regular fa-sun"></i>Light</button>
+                <button class="dark-button">
+                  <i class="fa-regular fa-moon"></i>Dark
+                </button>
+                <button class="light-button">
+                  <i class="fa-regular fa-sun"></i>Light
+                </button>
               </span>
             </li>
           </ul>
@@ -181,6 +185,16 @@
         localStorage.removeItem("adminLogin");
         window.location = "/AIGenerator/login/login.html";
       }
+    </script>
+    <script>
+      const toggleButton = document.getElementById("toggle-button");
+      const darkButton = document.querySelector(".dark-button");
+      const lightButton = document.querySelector(".light-button");
+
+      toggleButton.addEventListener("click", () => {
+        darkButton.classList.toggle("hidden");
+        lightButton.classList.toggle("hidden");
+      });
     </script>
   </body>
 </html>

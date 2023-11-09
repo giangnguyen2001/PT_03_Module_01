@@ -185,6 +185,17 @@ body {
   white-space: nowrap;
 }
 
+.down .color-mode button .dark-button {
+  background-color: #333;
+  color: #fff;
+}
+
+.down .color-mode button .light-button {
+  background-color: #fff;
+  color: #333;
+}
+ 
+
 .main {
   position: absolute;
   width: calc(100% - 200px);

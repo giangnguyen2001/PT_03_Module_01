@@ -113,10 +113,138 @@
         </div>
         <div class="final">
           <a href="/AIGenerator/home/ImgInfo.html"
-            ><button class="submit">Create</button></a
+            ><button class="submit" id="generateButton">Generate</button></a
           >
         </div>
       </div>
     </div>
+    <div class="result">
+      <button id="generateButton">Generate</button>
+      <button id="getImageButton">Get</button>
+      <!-- <button id="checkButton">Check</button> -->
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+      // Your API request functions (createTextToImage, getImage, showStyleList) here...
+      function createTextToImage() {
+        // Define the request configuration for creating text-to-image
+        const createTextToImageBody = {
+          method: "POST",
+          url: "https://api.neural.love/v1/ai-art/generate",
+          headers: {
+            accept: "application/json",
+            "content-type": "application/json",
+            authorization:
+              "Bearer v1.c85940c411238950d67f648a6ae951fed216f8080a12bd6a3356a4c9e8bcbb3d",
+          },
+          data: {
+            style: "ANIME",
+            layout: "SQUARE",
+            amount: 4,
+            isPublic: true,
+            isPriority: false,
+            isHd: false,
+            steps: 30,
+            cfgScale: 7.5,
+            autoClean: false,
+            prompt: "a cat",
+            seed: 0,
+            sampler: "ddim",
+            negativePrompt: "",
+            customModelId: "",
+          },
+        };
+
+        // Make the API request using Axios
+        return axios.request(createTextToImageBody);
+      }
+
+      function getImage() {
+        const getImageBody = {
+          method: "GET",
+          url: "https://api.neural.love/v1/ai-art/orders/1ee7f137-97da-6ad6-9b9f-e511a905c079",
+          headers: {
+            accept: "application/json",
+            authorization:
+              "Bearer v1.c85940c411238950d67f648a6ae951fed216f8080a12bd6a3356a4c9e8bcbb3d",
+          },
+        };
+
+        return axios.request(getImageBody);
+      }
+
+      // function showStyleList() {
+      //   const styleList = {
+      //     method: "GET",
+      //     url: "https://api.neural.love/v1/ai-art/styles",
+      //     headers: {
+      //       accept: "application/json",
+      //       authorization:
+      //         "Bearer v1.c85940c411238950d67f648a6ae951fed216f8080a12bd6a3356a4c9e8bcbb3d",
+      //     },
+      //   };
+
+      //   return axios.request(styleList);
+      // }
+
+      function handleCreateTextToImageResponse(response) {
+        // Assuming the response data is in JSON format
+        // You can update the result section with the API response
+        const resultElement = document.querySelector(".result");
+
+        // Clear the previous content
+        resultElement.innerHTML = "";
+
+        // Display the response data
+        resultElement.innerHTML = JSON.stringify(response.data, null, 2);
+      }
+
+      function handleGetImageResponse(response) {
+        const resultElement = document.querySelector(".result");
+
+        // Clear the previous content
+        resultElement.innerHTML = "";
+
+        // Display the response data
+        resultElement.innerHTML = JSON.stringify(response.data, null, 2);
+      }
+
+      function handleShowStyleListResponse(response) {
+        const resultElement = document.querySelector(".result");
+
+        // Clear the previous content
+        resultElement.innerHTML = "";
+
+        // Display the response data
+        resultElement.innerHTML = JSON.stringify(response.data, null, 2);
+      }
+
+      // Attach event listeners to buttons to trigger API requests
+      document
+        .getElementById("generateButton")
+        .addEventListener("click", () => {
+          createTextToImage()
+            .then(handleCreateTextToImageResponse)
+            .catch(handleErrorResponse);
+        });
+
+      document
+        .getElementById("getImageButton")
+        .addEventListener("click", () => {
+          getImage().then(handleGetImageResponse).catch(handleErrorResponse);
+        });
+
+      // document.getElementById("checkButton").addEventListener("click", () => {
+      //   showStyleList()
+      //     .then(handleShowStyleListResponse)
+      //     .catch(handleErrorResponse);
+      // });
+
+      // Handle errors
+      function handleErrorResponse(error) {
+        const resultElement = document.querySelector(".result");
+        resultElement.innerHTML = "Error: " + error.message;
+      }
+    </script>
   </body>
 </html>

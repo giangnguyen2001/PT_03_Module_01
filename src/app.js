@@ -1,49 +1,28 @@
-// import React, { useEffect, useState } from "react";
-// import firebase from "firebase/app";
+import axios from "axios";
 
-// const App = () => {
-//   const [user, setUser] = useState(null);
+const options = {
+  method: "POST",
+  url: "https://api.neural.love/v1/ai-art/generate",
+  headers: { accept: "application/json", "content-type": "application/json" },
+  data: {
+    style: "FANTASY",
+    layout: "SQUARE",
+    amount: 4,
+    isPublic: true,
+    isPriority: false,
+    isHd: false,
+    steps: 30,
+    cfgScale: 7.5,
+    autoClean: false,
+    prompt: "a cat",
+  },
+};
 
-//   useEffect(() => {
-//     // Đăng ký một hàm nghe sự kiện trạng thái đăng nhập thay đổi
-//     const unsubscribe = firebase.auth().onAuthStateChanged((authUser) => {
-//       if (authUser) {
-//         // Người dùng đã đăng nhập
-//         setUser(authUser);
-//       } else {
-//         // Người dùng đã đăng xuất
-//         setUser(null);
-//       }
-//     });
-
-//     return () => {
-//       // Hủy đăng ký sự kiện khi unmount component
-//       unsubscribe();
-//     };
-//   }, []);
-
-//   const handleLogout = async () => {
-//     try {
-//       await firebase.auth().signOut();
-//       // Đăng xuất thành công
-//     } catch (error) {
-//       // Xử lý lỗi nếu có
-//       console.error(error);
-//     }
-//   };
-
-//   return (
-//     <div>
-//       {user ? (
-//         <div>
-//           <p>Xin chào, {user.email}</p>
-//           <button onClick={handleLogout}>Đăng xuất</button>
-//         </div>
-//       ) : (
-//         <Login />
-//       )}
-//     </div>
-//   );
-// };
-
-// export default App;
+axios
+  .request(options)
+  .then(function (response) {
+    console.log(response.data);
+  })
+  .catch(function (error) {
+    console.error(error);
+  });
